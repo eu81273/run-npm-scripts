@@ -17,7 +17,7 @@ co(function* () {
     }]);
     const [ cmd, ...args ] = scripts[target].split(' ');
 
-    spawn(cmd, args, { stdio: 'inherit' });
+    spawn(cmd, args, { stdio: 'inherit', shell: true });
 })
 .catch(function () {
     console.log(chalk.blue('package.json'), 'not found.');
